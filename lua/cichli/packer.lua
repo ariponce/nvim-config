@@ -26,14 +26,14 @@ return require('packer').startup(function(use)
   use "drewtempelmeyer/palenight.vim"
   use "tinted-theming/base16-vim"
 
-   use {
+  use {
 	   'nvim-treesitter/nvim-treesitter',
 	   run = function()
 		   local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
 		   ts_update()
 	   end,};
-	   use("theprimeagen/harpoon");
-	   use("mbbill/undotree");
+  use("theprimeagen/harpoon");
+  use("mbbill/undotree");
   use("tpope/vim-fugitive");
   use("nvim-treesitter/nvim-treesitter-context");
 
@@ -65,6 +65,11 @@ return require('packer').startup(function(use)
   use {
       'gennaro-tedesco/nvim-possession',
       requires = {'ibhagwan/fzf-lua'}
+  }
+
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
   }
 
 end)
